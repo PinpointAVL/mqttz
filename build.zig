@@ -14,7 +14,7 @@ pub fn build(b: *std.Build) !void {
             .root_source_file = b.path("src/posix.zig"),
             .target = target,
             .optimize = optimize,
-            .test_runner = .{ .path = b.path("test_runner.zig"), .mode = .simple }, // add this line
+            .test_runner = b.path("test_runner.zig"),
         });
 
         const run_test = b.addRunArtifact(lib_test);
